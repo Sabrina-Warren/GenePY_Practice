@@ -1,0 +1,31 @@
+#Print sorbet flavors
+
+#You're working for a restaurant and they're asking you to generate the sorbet menu.
+#Provide a script printing every possible sorbet duos from a given list of flavors.
+#Don't print recipes with twice the same flavor (no "Chocolate, Chocolate"), and don't print twice the same recipe (if you print "Vanilla, Chocolate", don't print "Chocolate, Vanilla", or vice-versa).
+
+"""
+Print out the list in a way the lists only uniques flavors in the list
+In order to print two flavors there will need to be two for loops. One to print the first flavor and one 
+to print the second flavor.
+To confirm that the flavors do not repeat, there is an if statement within the for loop that ensures that
+the second flavor is not before or the same as the first flavor on the list.
+"""
+
+FLAVORS = [
+    "Banana",
+    "Chocolate",
+    "Lemon",
+    "Pistachio",
+    "Raspberry",
+    "Strawberry",
+    "Vanilla",
+]
+
+def flavor_options():
+    for num in range(len(FLAVORS)):  # This for loop increments the variable num which is used in the print statement to print the first flavor. Num is incremented to the length of the FLAVORS list
+        for num2 in range(len(FLAVORS) - 1):  # This for loop increments the variable num2 which is use in the print statement to print the second flavor. Num2 is incremented to the length of the FLAVORS list
+            if (num2 < num):  # Confirms that num2 is less than num so that the second flavor printed is only a flavor after the first flavor in the list.
+                print(FLAVORS[num] + ", " + FLAVORS[num2])
+                
+flavor_options()

@@ -14,4 +14,4 @@ def longest_word(text):
             long_word = sentence[num]
     return long_word
 
-longest_word()
+longest_word('test')

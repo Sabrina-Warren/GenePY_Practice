@@ -1,0 +1,17 @@
+#Longest word
+
+#Write a function giving the longest word in a given text.
+#Your function should be named longest_word, take a single argument text and return a string which should be the longest word in the given text.
+
+import string
+
+def longest_word(text):
+    sentence = []
+    sentence = text.split()
+    long_word = sentence[0]
+    for num in range(len(sentence)):
+        if len(sentence[num]) >= len(long_word):
+            long_word = sentence[num]
+    return long_word
+
+longest_word()

@@ -1,0 +1,17 @@
+#Print every pair of distinct letters
+
+#Provide a script printing every possible pairs of two different letters.
+#Only lower case, one pair per line, ordered alphabetically.
+#Don't print pairs consisting of twice the same letter, such as 'aa', 'bb', etc...
+
+import string 
+from string import ascii_lowercase
+
+def distinct_letters():
+    alphabet = ascii_lowercase
+    for num in range(len(alphabet)):
+        for num2 in range(len(alphabet)):
+            if(alphabet[num] != alphabet[num2]):
+                print(alphabet[num] + alphabet[num2])
+                
+distinct_letters()

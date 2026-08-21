@@ -1,0 +1,15 @@
+#Print every two letters pairs
+
+#Provide a script printing every possible pairs of two letters, only lower case, one by line, ordered alphabetically.
+
+import string
+from string import ascii_lowercase
+
+def letters():
+    alphabet = ascii_lowercase
+    for num in range(len(alphabet)):
+        for num2 in range(len(alphabet)):
+             print(alphabet[num] + alphabet[num2])
+        
+letters()
+        

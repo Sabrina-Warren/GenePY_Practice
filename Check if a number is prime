@@ -1,0 +1,18 @@
+# Check if a number is prime
+
+import math
+
+def is_prime(n):
+    
+    prime_check = 0
+    
+    for i in range(2, int(math.sqrt(n)) + 1):  # Checks whether the number n is divisible by any number between two and the square root of n. It also excludes checking whether the number n is divisible by itself
+        if ((n % i) == 0) and (n != i): 
+            prime_check = 1
+            
+    if (prime_check == 1) or (n == 1):  # Checks if the prime_check flag is equal to 1, meaning it is not a prime number as well as the edge case of 1
+        print('False')
+        return False
+    else:
+        print('True')
+        return True

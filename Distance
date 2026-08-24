@@ -1,0 +1,25 @@
+#Distance
+
+#Find the distance between the two furthest apart values in a list.
+
+Create a dist function, receiving a list of numbers (integers or floating points), and returning the bigger distance between any two given values
+
+def dist(points):
+    # Sets the initial smallest and largest values to the first item in the list
+    smallest = points[0]
+    largest = points[0]
+    for small_num in range(len(points)):
+    # Increments small_num until is reaches one number less than the length of the points list
+        if (smallest > points[small_num]):
+        # Checks each number against the next number in the list and determines if it is larger than the smallest
+            smallest = points[small_num]
+    for large_num in range(len(points)):
+    # Increments large_num until is reaches one number less than the length of the points list
+        if (largest < points[large_num]):
+        # Checks each number against the next number in the list and determines if it is smaller than largest
+            largest = points[large_num]
+    distance = largest - smallest
+    print(distance)
+    return distance
+    
+dist([1, 2])

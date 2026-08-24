@@ -1,0 +1,12 @@
+# Is divisible by ?
+
+# Create a program to find and print all numbers from 0 to 1000 (both included), that are divisible by 7 and whose digits sum are divisible by 3.
+# For instance, 1512 is divisible by 7 and the sum of all its is digits (9) is divisible by 3.
+
+for num in range(0,1001):
+    sum = 0
+    for i in str(num):  # Adds each character in the num string to the total sum
+        sum = sum + int(i)
+    if (num % 7 == 0) and (sum % 3 == 0):  # Checks if the number is divisible by 7 and that the sum of its didgits is divisble by 3
+        print(num)
+    

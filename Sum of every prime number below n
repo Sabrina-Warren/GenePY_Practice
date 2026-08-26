@@ -1,0 +1,36 @@
+# Sum of every prime number below n
+
+# Write a sum_primes function returning the sum of every prime number strictly inferior to its single parameter.
+
+import math
+
+def is_prime(n):
+    
+    prime_check = 0
+    
+    for i in range(2, int(math.sqrt(n)) + 1):  # Checks whether the number n is divisible by any number between two and the square root of n. It also excludes checking whether the number n is divisible by itself
+        if ((n % i) == 0) and (n != i): 
+            prime_check = 1
+            
+    if (prime_check == 1) or (n == 1):  # Checks if the prime_check flag is equal to 1, meaning it is not a prime number as well as the edge case of 1
+        return False
+    else:
+        return True
+
+def sum_primes(num):
+    
+    prime_list = []
+    
+    for inc in range(0, num):  # Makes a new list of only the prim numbers in the passed range by calling the is_prime function and appending that number to the new list if the is_prime function returns a 1
+        if(is_prime(inc) == True):
+           prime_list.append(inc)
+    
+    total = 0
+    
+    for inc in range(len(prime_list)):  # Sums up each prime number in the list made in the previous for loop
+        total += prime_list[inc]
+        
+    print (total)
+    return total
+    
+sum_primes(10)

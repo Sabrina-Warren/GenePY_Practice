@@ -1,0 +1,30 @@
+# Next prime
+
+# Provide a script that computes, then prints the first prime number greater than 100_000_000.
+
+import math
+
+def is_prime(n):
+    
+    prime_check = 0
+    
+    for i in range(2, int(math.sqrt(n)) + 1):  # Checks whether the number n is divisible by any number between two and the square root of n. It also excludes checking whether the number n is divisible by itself
+        if ((n % i) == 0) and (n != i): 
+            prime_check = 1
+            
+    if (prime_check == 1) or (n == 1):  # Checks if the prime_check flag is equal to 1, meaning it is not a prime number as well as the edge case of 1
+        return False
+    else:
+        return True
+        
+def next_prime(num):
+    
+    num += 1  # Increments num by one to start the prime comparisons for the number after the one passed to the next_prime function
+    
+    while (is_prime(num) != True):  # Increments num until the number passed to the is_prime function returns True, meaning it is prime
+        num += 1
+    
+    print(num)
+    
+next_prime(100000000)
+        

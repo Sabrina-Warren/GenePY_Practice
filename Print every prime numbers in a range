@@ -1,0 +1,35 @@
+# Print every prime numbers in a range
+
+# Provide a script that print every prime number in the range [10000;10050], on one line, separated by comas and spaces.
+
+import math
+
+def is_prime(n):
+    
+    prime_check = 0
+    
+    for i in range(2, int(math.sqrt(n)) + 1):  # Checks whether the number n is divisible by any number between two and the square root of n. It also excludes checking whether the number n is divisible by itself
+        if ((n % i) == 0) and (n != i): 
+            prime_check = 1
+            
+    if (prime_check == 1) or (n == 1):  # Checks if the prime_check flag is equal to 1, meaning it is not a prime number as well as the edge case of 1
+        return False
+    else:
+        return True
+
+def print_prime(num1, num2):
+    
+    prime_list = []
+    
+    for num in range(num1, num2):  # Makes a new list of only the prim numbers in the passed range by calling the is_prime function and appending that number to the new list if the is_prime function returns a 1
+        if(is_prime(num) == True):
+           prime_list.append(num)
+    
+    
+    for num in range(len(prime_list)):  # Prints out prime_list by calling each index and printing it put with ', ' as the seperator
+        if num != len(prime_list):
+            print(prime_list[num], end = ', ')
+    
+    print(prime_list[num])  # Prints out the last value in prime_list so that there is no trailing comma
+        
+print_prime(10000, 10050)

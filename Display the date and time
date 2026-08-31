@@ -1,0 +1,10 @@
+# Display the date and time
+
+# Write a program printing the current date (year month day hour minute and seconds) in a human readable format.
+
+import datetime
+
+def print_date_time():
+    print(f'Today is {datetime.date.today()} and it is {datetime.time()}.')
+    
+print_date_time()

@@ -1,0 +1,33 @@
+# The missing card
+
+# Write a function named missing_card that given a card game returns the (single) missing card name.
+# The card game will be given as a single string of space-separated cards names.
+# A card is represented by its color and value, the color being in {"S", "H", "D", "C"} and the value being in {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"}, for a total of 52 possibilities.
+# You'll always be given 51 cards, and you have to return the missing one.
+
+cards = "S3 S2 S4 S5 S6 S7 S8 S9 S10 SJ SK SA H2 H3 H4 H5 H6 H7 H8 H9 H10 HJ HQ HK HA D2 D3 D4 D5 D6 D7 D8 D9 D10 DJ DQ DK DA C2 C3 C4 C5 C6 C7 C8 C9 C1 C0 CJ CQ CK CA"
+
+all_cards = ['S2','S3','S4','S5','S6','S7','S8','S9','S10','SJ','SQ','SK','SA',
+        'H2','H3','H4','H5','H6','H7','H8','H9','H10','HJ','HQ','HK','HA',
+        'D2','D3','D4','D5','D6','D7','D8','D9','D10','DJ','DQ','DK','DA',
+        'C2','C3','C4','C5','C6','C7','C8','C9','C10','CJ','CQ','CK','CA']
+
+def missing_card(cards):
+    
+    cards_list = cards.split(' ')  # Converts the cards string into a list
+    cards_list.append('')
+    new_cards_list = []
+    
+    for inc in range(len(all_cards)):  # Sorts the cards_list into the same format as the all_cards list
+        for inc2 in range(len(all_cards)):
+            if all_cards[inc] == cards_list[inc2]:
+                new_cards_list.append(cards_list[inc2])
+    
+    new_cards_list.append('')  # Added another entity to the list to avoid indexing error
+    
+    for inc in range(len(all_cards)):  # Finds which card does not match the full list
+        if all_cards[inc] != new_cards_list[inc]:
+            print(f'Missing Card: {all_cards[inc]}')
+            return(all_cards[inc])
+                
+missing_card(cards)
